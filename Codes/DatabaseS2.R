@@ -73,12 +73,6 @@ nrow(table1_1) #number of DEGs
 length(intersect(table1_1$TranscriptID, rib$TranscriptID)) #number of ribosomal proteins
 n_deg_amy <- nrow(table1_1) + " (" + length(intersect(table1_1$TranscriptID,rib$TranscriptID)) + ")"
 
-#count3 <- as.data.frame(count2) %>%
-#  mutate(TranscriptID = rownames(count2)) %>%
-#  inner_join(., table1_1, by = "TranscriptID") %>%
-#  select(TranscriptID, everything()) #%>%
-#  write.table(., file = "../Data/DEanalysis_perm/DEGs_" + i + "_Amy_edgeR.tsv", quote=F, col.names = T, row.names = F, sep = "\t")
-
 ###Hypothalamus
 count2 <- count %>% select(W2.R6.Hyp, W4.R6.Hyp, W6.R6.Hyp, D1.R6.Hyp, D2.R6.Hyp, D3.R6.Hyp) %>% as.matrix()
 d <- DGEList(counts = count2, group = group)
@@ -114,13 +108,6 @@ nrow(table2_1) #number of DEGs
 
 length(intersect(table2_1$TranscriptID, rib$TranscriptID)) #number of ribosomal proteins
 n_deg_hyp <- nrow(table2_1) + " (" + length(intersect(table2_1$TranscriptID,rib$TranscriptID)) + ")"
-
-#count3 <- as.data.frame(count2) %>%
-#  mutate(TranscriptID = rownames(count2)) %>%
-#  inner_join(., table2_1, by = "TranscriptID") %>%
-#  select(TranscriptID, everything()) #%>%
-#  write.table(., file = "../Data/DEanalysis_perm/DEGs_" + i + "_Hyp_edgeR.tsv", quote=F, col.names = T, row.names = F, sep = "\t")
-
 
 ###Hippocampus
 count2 <- count %>% select(P1_W2.R7, P1_W4.R7, P1_W6.R7, P3_D1.R7, P3_D2.R7, P3_D3.R7) %>% as.matrix()
@@ -159,13 +146,6 @@ nrow(table3_1) #number of DEGs
 length(intersect(table3_1$TranscriptID, rib$TranscriptID)) #number of ribosomal proteins
 n_deg_hipp <- nrow(table3_1) + " (" + length(intersect(table3_1$TranscriptID,rib$TranscriptID)) + ")"
 
-#count3 <- as.data.frame(count2) %>%
-#  mutate(TranscriptID = rownames(count2)) %>%
-#  inner_join(., table3_1, by = "TranscriptID") %>%
-#  select(TranscriptID, everything()) #%>%
-#  write.table(., file = "../Data/DEanalysis_perm/DEGs_" + i + "_Hipp_edgeR.tsv", quote=F, col.names = T, row.names = F, sep = "\t")
-
-
 ###Parietal & temporal cortex
 count2 <- count %>% select(P2_W2.R9, P2_W4.R9, P2_W6.R9, P4_D1.R9, P4_D2.R9, P4_D3.R9) %>% as.matrix()
 d <- DGEList(counts = count2, group = group)
@@ -201,13 +181,6 @@ nrow(table4_1) #number of DEGs
 
 length(intersect(table4_1$TranscriptID, rib$TranscriptID)) #number of ribosomal proteins
 n_deg_partemp <- nrow(table4_1) + " (" + length(intersect(table4_1$TranscriptID,rib$TranscriptID)) + ")"
-
-#count3 <- as.data.frame(count2) %>%
-#  mutate(TranscriptID = rownames(count2)) %>%
-#  inner_join(., table4_1, by = "TranscriptID") %>%
-#  select(TranscriptID, everything()) #%>%
-#  write.table(., file = "../Data/DEanalysis_perm/DEGs_" + i + "_ParTemp_edgeR.tsv", quote=F, col.names = T, row.names = F, sep = "\t")
-
 
 ##Output the results
 table1_2 <- data.frame(table1)

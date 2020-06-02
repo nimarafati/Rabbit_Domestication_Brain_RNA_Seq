@@ -105,10 +105,10 @@ for (my $n=0; $n<=$#ARGV; $n++){
 		}
 
 		my ($sweep, $daf, $t) = ("-", "-", 0); 
-		my ($chr, $start, $end) = ($chr{$key}, $end{$key}, $end{$key}); 
+		my ($chr, $start, $end) = ($chr{$key}, $start{$key}, $end{$key}); 
 		if(defined $sweep{$chr}){
 			foreach my $key2 (sort {$a <=> $b} keys %{$sweep{$chr}}){
-				if($end > $key2-100000 and $start < $sweep{$chr}{$key2}+100000){
+				if($end > $key2 - 100000 and $start < $sweep{$chr}{$key2} + 100000){
 					$sweep = $swe_name{$chr}{$key2} if($t==0);
 					$sweep = $sweep.", ".$swe_name{$chr}{$key2} if($t>0);
 					$t++;
@@ -137,10 +137,10 @@ for (my $n=0; $n<=$#ARGV; $n++){
 		}
 
 		my ($sweep, $daf, $t) = ("-", "-", 0); 
-		my ($chr, $start, $end) = ($chr{$key}, $end{$key}, $end{$key}); 
+		my ($chr, $start, $end) = ($chr{$key}, $start{$key}, $end{$key}); 
 		if(defined $sweep{$chr}){
 			foreach my $key2 (sort {$a <=> $b} keys %{$sweep{$chr}}){
-				if($end > $key2-100000 and $start < $sweep{$chr}{$key2}+100000){
+				if($end > $key2 - 100000 and $start < $sweep{$chr}{$key2} + 100000){
 					$sweep = $swe_name{$chr}{$key2} if($t==0);
 					$sweep = $sweep.", ".$swe_name{$chr}{$key2} if($t>0);
 					$t++;

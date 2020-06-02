@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+#Please note that this script takes a while...
 use strict;
 use warnings;
 

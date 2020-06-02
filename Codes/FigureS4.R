@@ -19,7 +19,7 @@ data_dAF_TSS2_nodegs <- data_dAF_TSS2 %>% filter(DEGs == "nonDEGs")
 rg<-ggplot(NULL) +
   geom_line(data=data_dAF_TSS2_degs,aes(x=Bin,y=log2(Num/Exp_Num),col=Region,group=Region),size=2,alpha=.8) +
   geom_line(data=data_dAF_TSS2_nodegs,aes(x=Bin,y=log2(Num/Exp_Num),col=Region,group=Region),size=2,linetype="twodash",alpha=.8) +
-  scale_color_viridis_d() +
+  scale_color_manual(labels=c("Amy", "Hyp", "Hipp", "ParTemp"), values=c("#35B779FF", "#31688EFF", "#440154FF", "#FDE725FF")) +
   labs(x = "dAF bins", y = "M value") +
   theme_classic(base_size = 11, base_family = "") +
   theme(legend.title=element_blank(), axis.text.x = element_text(angle = 45, hjust = 1))

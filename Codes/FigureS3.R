@@ -16,8 +16,8 @@ data <- data %>% pivot_longer(col=c("logFC_Amy", "logFC_Hyp", "logFC_Hipp", "log
 
 g <- ggplot(data, aes(Reg, abs(FC), color = Reg, fill = Reg)) +
   geom_boxplot(aes(alpha=dAF), outlier.colour = NA) +
-  scale_color_viridis_d(labels=c("Amygdala","Hypothalamus", "Hippocampus", "Parietal / temporal cortex")) +
-  scale_fill_viridis_d(labels=c("Amygdala","Hypothalamus", "Hippocampus", "Parietal / temporal cortex")) +
+  scale_color_manual(labels=c("Amygdala","Hypothalamus", "Hippocampus", "Parietal / temporal cortex"), values=c("#35B779FF", "#31688EFF", "#440154FF", "#FDE725FF")) +
+  scale_fill_manual(labels=c("Amygdala","Hypothalamus", "Hippocampus", "Parietal / temporal cortex"), values=c("#35B779FF", "#31688EFF", "#440154FF", "#FDE725FF")) +
   scale_alpha_manual(values = c(No = 0.05, Yes = 1), labels=c("Genes without high dAF in CNCR", "Genes with high dAF in CNCR")) +
   coord_cartesian(ylim = c(0,1)) +
   ylab(expression(paste("|Log"[2],"(Fold Change)|"))) +

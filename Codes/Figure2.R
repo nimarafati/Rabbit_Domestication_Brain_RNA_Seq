@@ -33,6 +33,7 @@ data_amy <- read.table("../Data/DEGs_Amy_edgeR.tsv",sep="\t",head=T,stringsAsFac
   ) %>%
   mutate_all(funs(ifelse(is.na(.),1.5,.))) %>%
   mutate(col = if_else(col == 1.5, "#eae5e3", col),
+         col = if_else(TranscriptID == "ENSOCUT00000003747", "#595857", col),
          font = if_else(font == 1.5, "plain", font)) %>%
   right_join(mapped_amy, by="TranscriptID")
 
@@ -63,7 +64,7 @@ data_hipp <- read.table("../Data/DEGs_Hipp_edgeR.tsv",sep="\t",head=T,stringsAsF
                               Feature == "NA" & Feature1 == "NA" ~ 1.5)
   ) %>%
   mutate_all(funs(ifelse(is.na(.),1.5,.))) %>%
-  mutate(col = if_else(col == 1.5 | Genename == "ROPN1L" | Genename == "RAB21" | Genename == "TTLL8", "#eae5e3", col),
+  mutate(col = if_else(col == 1.5 | Genename == "DNAH1" | Genename == "PPP1R32" | Genename == "ROPN1L" | Genename == "RAB21" | Genename == "TTLL8", "#eae5e3", col),
          font = if_else(font == 1.5, "plain", font)) %>%
   right_join(mapped_hipp, by="TranscriptID")
 

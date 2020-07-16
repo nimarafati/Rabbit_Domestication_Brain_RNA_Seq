@@ -28,28 +28,10 @@ g1<-ggplot(NULL) +
   ylab("dAF") +
   theme(plot.title = element_text(hjust = 0.5)) +
   theme_bw(base_size = 11, base_family = "")
-g1
-data_dAF_x<-data_dAF[data_dAF$CHR=="chr1",]
-data_dAF_w_x<-data_dAF_w[data_dAF_w$CHR=="chr1",]
-g2<-ggplot(NULL) +
-  geom_point(data=data_dAF_x,aes(x=POS,y=dAF),alpha=.1) +
-  geom_line(data=data_dAF_w_x,aes(x=(START+END)/2,y=AVE_dAF)) +
-  geom_segment(data=data_dAF_w_x, aes(x=45556643, xend=45556161, y=.8, yend=.8), arrow = arrow(length = unit(0.2, "cm")),size = .5,col="#a22041") +
-  annotate("text", x=45560000, y=.83, label="RPL21",col="#a22041", fontface="italic") +
-  geom_segment(data=data_dAF_w_x, aes(x=45429244, xend=45862102, y=.87, yend=.87), arrow = arrow(length = unit(0.2, "cm")),size = .5) +
-  annotate("text", x=45660000, y=.90, label="PTPRD", fontface="italic") +
-  geom_segment(data=data_dAF_w_x, aes(x=46416417, xend=46420263, y=.8, yend=.8), arrow = arrow(length = unit(0.2, "cm")),size = .5) +
-  annotate("text", x=46418000, y=.85, label="TMEM261", fontface="italic") +
-  geom_hline(yintercept=quantile(data_dAF_w$AVE_dAF,probs=0.99),linetype="dashed",col="#a22041") +
-  coord_cartesian(xlim = c(45300000,46000000)) +
-  xlab("Chromosome 1 (OryCun2)") +
-  ylab("dAF") +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  theme_bw(base_size = 11, base_family = "")
 
 data_dAF_x<-data_dAF[data_dAF$CHR=="chr13",]
 data_dAF_w_x<-data_dAF_w[data_dAF_w$CHR=="chr13",]
-g3<-ggplot(NULL) +
+g2<-ggplot(NULL) +
   geom_point(data=data_dAF_x,aes(x=POS,y=dAF),alpha=.1) +
   geom_line(data=data_dAF_w_x,aes(x=(START+END)/2,y=AVE_dAF)) +
   geom_segment(data=data_dAF_w_x, aes(x=36108502, xend=36089996, y=.8, yend=.8), arrow = arrow(length = unit(0.2, "cm")),size = .5,col="#a22041") +
@@ -75,7 +57,7 @@ g3<-ggplot(NULL) +
 
 data_dAF_x<-data_dAF[data_dAF$CHR=="chr10",]
 data_dAF_w_x<-data_dAF_w[data_dAF_w$CHR=="chr10",]
-g4<-ggplot(NULL) +
+g3<-ggplot(NULL) +
   geom_point(data=data_dAF_x,aes(x=POS,y=dAF),alpha=.1) +
   geom_line(data=data_dAF_w_x,aes(x=(START+END)/2,y=AVE_dAF)) +
   geom_segment(data=data_dAF_w_x, aes(x=5691866, xend=6610935, y=.9, yend=.9),size = 2, col="#a22041") +
@@ -88,6 +70,24 @@ g4<-ggplot(NULL) +
   geom_hline(yintercept=quantile(data_dAF_w$AVE_dAF,probs=0.99),linetype="dashed",col="#a22041") +
   coord_cartesian(xlim = c(6500000,7100000)) +
   xlab("Chromosome 10 (OryCun2)") +
+  ylab("dAF") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme_bw(base_size = 11, base_family = "")
+
+data_dAF_x<-data_dAF[data_dAF$CHR=="chr1",]
+data_dAF_w_x<-data_dAF_w[data_dAF_w$CHR=="chr1",]
+g4<-ggplot(NULL) +
+  geom_point(data=data_dAF_x,aes(x=POS,y=dAF),alpha=.1) +
+  geom_line(data=data_dAF_w_x,aes(x=(START+END)/2,y=AVE_dAF)) +
+  geom_segment(data=data_dAF_w_x, aes(x=45556643, xend=45556161, y=.8, yend=.8), arrow = arrow(length = unit(0.2, "cm")),size = .5,col="#a22041") +
+  annotate("text", x=45560000, y=.83, label="RPL21",col="#a22041", fontface="italic") +
+  geom_segment(data=data_dAF_w_x, aes(x=45429244, xend=45862102, y=.87, yend=.87), arrow = arrow(length = unit(0.2, "cm")),size = .5) +
+  annotate("text", x=45660000, y=.90, label="PTPRD", fontface="italic") +
+  geom_segment(data=data_dAF_w_x, aes(x=46416417, xend=46420263, y=.8, yend=.8), arrow = arrow(length = unit(0.2, "cm")),size = .5) +
+  annotate("text", x=46418000, y=.85, label="TMEM261", fontface="italic") +
+  geom_hline(yintercept=quantile(data_dAF_w$AVE_dAF,probs=0.99),linetype="dashed",col="#a22041") +
+  coord_cartesian(xlim = c(45300000,46000000)) +
+  xlab("Chromosome 1 (OryCun2)") +
   ylab("dAF") +
   theme(plot.title = element_text(hjust = 0.5)) +
   theme_bw(base_size = 11, base_family = "")
